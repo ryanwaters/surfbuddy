@@ -1,0 +1,10 @@
+
+<%= form_for @comment do |f| %>
+ <h3 class="subheader"><%= f.label :Create_New_Comment%></h3> </br>
+ <%= f.label :Comment %>
+  <%= f.text_area :body, :rows => '30' %>
+  <%= f.hidden_field :post_id, :value => params[:id] %>
+  
+    <br>
+  <%= f.submit %>
+<% end %>

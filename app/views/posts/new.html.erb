@@ -1,0 +1,10 @@
+<%= form_for @post do |f| %>
+ <h3 class="subheader"><%= f.label :Create_New_Post%></h3> </br>
+ <%= f.label :Title %>
+ <%= f.text_field :title%>
+ <%= f.label :Message %>
+  <%= f.text_area :body, :rows => '30' %>
+  
+    <br>
+  <%= f.submit %>
+<% end %>

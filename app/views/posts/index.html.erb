@@ -1,0 +1,26 @@
+    
+   <h3 class="subheader"> <%= link_to "Create New Post", controller: "posts", action: "new" %></h3>
+
+    <table>
+      <% @posts.reverse.each do |post| %>
+      <tr>
+          
+        <td><%= post.created_at.to_s(:short) %></td>
+        <td><%= post.user_id %></td>
+        <td><%= post.title %></td>
+        
+        <td><%= post.body %> </td>
+        <td><%= link_to "Add Comment", controller: "comments", action: "new", id: post.id%> </td>
+        
+        <td><%= post.comments.first.body if post.comments.any?  %></td>
+
+
+
+      </tr>
+
+      
+    <% end %>
+  </table>
+
+
+
