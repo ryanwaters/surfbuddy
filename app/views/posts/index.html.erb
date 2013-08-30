@@ -12,10 +12,12 @@
         <td><%= post.body %> </td>
         <td><%= link_to "Add Comment", controller: "comments", action: "new", id: post.id%> </td>
         
-        <td> <% if post.comments.any?  %>
-             <% post.comments.each do |comment| %>
-              <%= comment.body %>
-              <% end %>
+        <td><% if post.comments.any?  %>
+            <% post.comments.each do |comment| %>
+            <%= comment.body %> 
+            <%= comment.user.try(:name) %>
+        
+            <% end %>
             <% end %>
         </td>
 

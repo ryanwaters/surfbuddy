@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :name, :description, :facebook_link, :linkedin_link, :twitter_link
 
   has_many :posts
+  has_many :comments, through: :posts
+  has_many :sent_messages, foreign_key: 'sender_id', class_name: 'Message'
+  has_many :received_messages, foreign_key: 'recipient_id', class_name: 'Message'
 
   validates_uniqueness_of :email
   validates_presence_of :name

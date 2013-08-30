@@ -12,8 +12,9 @@
 
 class Message < ActiveRecord::Base
   
-  belongs_to :users
-
-  attr_accessible :recipient_id, :sender_id, :body
+  belongs_to :recipient, :class_name => 'User'
+  belongs_to :sender, :class_name => 'User'
+  
+  attr_accessible :recipient_id, :sender_id, :body, :title
 
 end

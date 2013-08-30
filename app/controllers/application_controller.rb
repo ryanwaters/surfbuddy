@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :signed_in_user
 
+  def user_authorization
+    
+    redirect_to(posts_path) unless current_user.id.to_s == params[:user_id]
+  end
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end

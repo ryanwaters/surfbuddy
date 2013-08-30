@@ -1,0 +1,12 @@
+<h3>Send a Message </h3>
+
+<%= form_for [@user, @message] do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %> </br>
+
+<%= f.label "message" %>
+<%= f.text_area :body, :rows => "30" %>
+
+<%= f.submit "Send Message" %>
+<%end%>
+

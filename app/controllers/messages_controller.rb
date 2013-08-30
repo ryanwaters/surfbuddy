@@ -1,20 +1,22 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :user_authorization, except: [:new, :create]
 
   def index
-    @messages = Message.all 
+    @user = User.find(params[:user_id])
+    @messages = @user.received_messages
   end
 
   def new
     @message = Message.new
-    @message.recipient_id = recipient_id(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def create
-    @message = Message.new(params[:id])
+    @message = Message.new(params[:message])
     @message.sender = current_user
+    @message.recipient_id = params[:user_id]
     @message.save
-    redirect_to messages_path
+    redirect_to user_messages_path
   end  
 
   def show

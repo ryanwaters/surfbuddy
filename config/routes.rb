@@ -6,9 +6,14 @@ Surfbuddy::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   root to: 'sessions#login'
-  resources :users
+  
+  resources :users do 
+    resources :messages
+  end
+    
   resources :sessions
   resources :posts
   resources :comments
+  
 
 end
