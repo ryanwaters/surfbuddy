@@ -6,13 +6,18 @@
       <tr>
           
         <td><%= post.created_at.to_s(:short) %></td>
-        <td><%= post.user_id %></td>
+        <td><%= link_to post.user.try(:name), post.user %></td>
         <td><%= post.title %></td>
-        
+
         <td><%= post.body %> </td>
         <td><%= link_to "Add Comment", controller: "comments", action: "new", id: post.id%> </td>
         
-        <td><%= post.comments.first.body if post.comments.any?  %></td>
+        <td> <% if post.comments.any?  %>
+             <% post.comments.each do |comment| %>
+              <%= comment.body %>
+              <% end %>
+            <% end %>
+        </td>
 
 
 

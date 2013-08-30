@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :signed_in_user
   
   def new
     @user = User.new
@@ -6,13 +7,21 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+     if @user
+      @name = @user.name
+      @email = @user.email
+      
+      render action: :show
+    else
+      render file: 'public/404', status: 404, formats: [:html]
+    end
   end
 
   def create
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: "Thanks for signing up!"
+      redirect_to posts_path, notice: "Thanks for signing up!"
     else
      
       render "new"
@@ -21,6 +30,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    
   end
 
   def update

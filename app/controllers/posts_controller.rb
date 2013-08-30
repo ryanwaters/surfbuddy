@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
+  before_filter :signed_in_user, except: [:index] 
 
   def index
-    # binding.pry 
     @posts = Post.includes(:comments).all 
   end
 

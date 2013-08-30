@@ -38,6 +38,8 @@
       <li><%= link_to "Messages" %></li>
       <li class="divider"></li>
       <li><%= link_to "About" %></li>
+      <li class="divider"></li>
+      <li><%= link_to "Profile", current_user %></li>
     </ul>
   </div>
 </nav>
@@ -65,7 +67,7 @@
 
     
     <%= javascript_include_tag "application" %>
-    <%= params.inspect %>
+    
     
   </body>
 </html>

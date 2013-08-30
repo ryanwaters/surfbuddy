@@ -1,0 +1,25 @@
+<h1>Profile</h1>
+<% if @user == current_user %>
+<%= link_to "Edit", controller: "users", action: "edit" %>
+<% end %>
+
+<h6>Name</h6>
+<%=@user.name%></br>
+</br>
+<h6>Email</h6>
+<%=@user.email%></br>
+</br>
+<h6>Tell us about yourself!</h6>
+<%=@user.description%></br>
+</br>
+<h6>Twitter Handle</h6>
+<%= @user.twitter_link%></br>
+</br>
+<h6>Facebook</h6>
+<%= link_to @user.facebook_link, @user.facebook_link %></br>
+</br>
+<h6>LinkedIn</h6>
+<%= link_to @user.linkedin_link, @user.linkedin_link%></br>
+
+
+

@@ -15,4 +15,5 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   attr_accessible :user_id, :body, :title
+  validates_presence_of :user 
 end
