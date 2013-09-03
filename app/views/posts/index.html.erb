@@ -1,33 +1,30 @@
     
    <h3 class="subheader"> <%= link_to "Create New Post", controller: "posts", action: "new" %></h3>
 
-    <table>
-      <% @posts.reverse.each do |post| %>
-      <tr>
-          
-        <td><%= post.created_at.to_s(:short) %></td>
-        <td><%= link_to post.user.try(:name), post.user %></td>
-        <td><%= post.title %></td>
-
-        <td><%= post.body %> </td>
-        <td><%= link_to "Add Comment", controller: "comments", action: "new", id: post.id%> </td>
+    
+      <div class="feed">
         
-        <td><% if post.comments.any?  %>
+          <% @posts.reverse.each do |post| %>
+          <div class="post">
+          <%= post.created_at.strftime('%b %e %Y %l:%M %P') %> </br>
+          <%= link_to post.user.try(:name), post.user %>
+          <h5> <%= post.title.capitalize %></h5>
+
+          <h5 class="subheader"><%= post.body %> </h5>
+          <%= link_to "Add Comment", controller: "comments", action: "new", id: post.id%> </br>
+        
+     
+          <% if post.comments.any?  %>
             <% post.comments.each do |comment| %>
-            <%= comment.body %> 
-            <%= comment.user.try(:name) %>
+          <h6 class="subheader"><%= link_to comment.user.try(:name), comment.user %>: <%= comment.body %> </h6> 
         
             <% end %>
+            </div>
             <% end %>
-        </td>
+            <% end %>
 
+      </div>
 
-
-      </tr>
-
-      
-    <% end %>
-  </table>
 
 
 

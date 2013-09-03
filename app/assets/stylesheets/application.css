@@ -12,3 +12,27 @@
  *= require foundation_and_overrides
  *= require_tree .
  */
+
+h5.subheader {
+  color:blue;
+}
+
+div.feed {
+  border: black 1px solid;
+  background: white;
+  opacity: .8;
+}
+
+div.post {
+  border: black 1px solid;
+  margin: 20px;
+  padding: 10px;
+}
+
+/*div.row {
+  background: url('./fort_point_sunny.jpg');
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/

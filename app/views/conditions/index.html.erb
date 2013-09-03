@@ -1,0 +1,151 @@
+
+<h3>Fort Point</h3>
+<div id="surf_chart" style="height: 250px;"> </div>
+
+<script>
+
+new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'surf_chart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= @graph_113.to_json.html_safe %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: ['x'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['size'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ["Size in ft" ],
+  fillOpacity: [0.8],
+  postUnits: "ft",
+  gridTextColor: '#000000',
+  gridLineColor: '#000000'
+
+});
+</script>
+<h3>Eagles Point</h3>
+<div id="surf_chart_2" style="height: 250px;"> </div>
+
+<script>
+
+new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'surf_chart_2',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= @graph_649.to_json.html_safe %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: ['x'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['size'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ["Size in ft" ],
+  fillOpacity: [0.8],
+  postUnits: "ft",
+  gridTextColor: '#000000',
+  gridLineColor: '#000000'
+
+});
+</script>
+<h3>Deadmans</h3>
+<div id="surf_chart_3" style="height: 250px;"> </div>
+
+<script>
+
+new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'surf_chart_3',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= @graph_648.to_json.html_safe %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: ['x'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['size'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ["Size in ft" ],
+  fillOpacity: [0.8],
+  postUnits: "ft",
+  gridTextColor: '#000000',
+  gridLineColor: '#000000'
+
+});
+</script>
+<h3>Kellys Cove</h3>
+<div id="surf_chart_4" style="height: 250px;"> </div>
+
+<script>
+
+new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'surf_chart_4',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= @graph_697.to_json.html_safe %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: ['x'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['size'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ["Size in ft" ],
+  fillOpacity: [0.8],
+  postUnits: "ft",
+  gridTextColor: '#000000',
+  gridLineColor: '#000000'
+
+});
+</script>
+<h3>North Ocean Beach</h3>
+<div id="surf_chart_5" style="height: 250px;"> </div>
+
+<script>
+
+new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'surf_chart_5',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= @graph_114.to_json.html_safe %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: ['x'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['size'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ["Size in ft" ],
+  fillOpacity: [0.8],
+  postUnits: "ft",
+  gridTextColor: '#000000',
+  gridLineColor: '#000000'
+
+});
+</script>
+<h3>South Ocean Beach</h3>
+<div id="surf_chart_6" style="height: 250px;"> </div>
+
+<script>
+
+new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'surf_chart_6',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: <%= @graph_117.to_json.html_safe %>,
+  // The name of the data record attribute that contains x-values.
+  xkey: ['x'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['size'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ["Size in ft" ],
+  fillOpacity: [.8],
+  postUnits: "ft",
+  gridTextColor: '#000000',
+  gridLineColor: '#000000'
+
+});
+</script>

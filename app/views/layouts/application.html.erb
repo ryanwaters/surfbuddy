@@ -18,6 +18,11 @@
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
   </head>
 
 
@@ -33,7 +38,7 @@
       <li class="divider"></li>
       <li><%= link_to "Posts", posts_path %></li>
       <li class="divider"></li>
-      <li><%= link_to "Condition Reports" %></li>
+      <li><%= link_to "Condition Reports", conditions_path %></li>
       <li class="divider"></li>
       <% if !current_user.nil? %>
       <li><%= link_to "Messages", user_messages_path(current_user.id) %></li> 
@@ -50,25 +55,25 @@
   <div class="small-6 large-8 columns"></div>
   <div class="small-12 large-2 columns">
     <% if current_user %>
-    Logged in as <%= current_user.email %>.
+    Logged in as <%= current_user.email %>
     <%= link_to "Log Out", session_path("current"), method: 'delete' %>
     <% else %>
     <%= link_to "Sign Up", new_user_path %> or
-    <%= link_to "Sign In", new_session_path %>
+    <%= link_to "Sign In", root_url %>
     <% end %>
   </div>  
 </div>
 
 <div class="row">
-  <div class="large-3 columns"></div>
-  <div class="large-6 columns"> <%= yield %> </div>
-  <div class="large-3 columns"></div>
+  <div class="small-6 large-2 columns"></div>
+  <div class="small-6 large-8 columns"><%= yield %></div>
+  <div class="small-12 large-2 columns"></div>
 </div>
 
     
 
     
-    <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
     
     
   </body>

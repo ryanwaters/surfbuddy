@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :signed_in_user, except: [:index] 
 
   def index
     @comments = Comment.all

@@ -10,10 +10,11 @@ Surfbuddy::Application.routes.draw do
   resources :users do 
     resources :messages
   end
-    
+
   resources :sessions
   resources :posts
   resources :comments
+  resources :conditions
   
 
 end
