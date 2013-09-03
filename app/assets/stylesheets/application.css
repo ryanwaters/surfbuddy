@@ -13,6 +13,12 @@
  *= require_tree .
  */
 
+a.google img {
+  background-image: url(./google_signin.png);
+  width: 239px;
+  height: 47px;
+  border: white 1px solid;
+}
 h5.subheader {
   color:blue;
 }

@@ -15,7 +15,8 @@
 #
 
 class User < ActiveRecord::Base
-  has_secure_password
+  @called_omniauth = false
+  has_secure_password unless @omniauth_user == true
 
   attr_accessible :email, :password, :password_confirmation, :name, :description, :facebook_link, :linkedin_link, :twitter_link
 
@@ -26,5 +27,10 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
   validates_presence_of :name
+
+   def self.from_omniauth(auth)
+    @called_omniauth = true
+    where(auth["extra"]["raw_info"].slice(:email, :name)).first_or_create 
+  end
   
 end

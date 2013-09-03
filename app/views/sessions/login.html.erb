@@ -10,8 +10,17 @@
 
       <%= label_tag :password %><br />
       <%= password_field_tag :password %>
+
+      <%= submit_tag "Log In" %> </br>
+      </br>
+
+      <h3>OR</h3>
+
+     <%= link_to image_tag(""), "/auth/google_oauth2", class: "google"%></br>
+
     
-      <%= submit_tag "Log In" %>
+    
+      
     <% end %>
 
      
