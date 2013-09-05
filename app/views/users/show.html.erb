@@ -1,28 +1,36 @@
+<div class="profile">
+  <h1 id="b">Profile</h1>
+  <% if @user == current_user %>
+  <%= link_to "Edit", controller: "users", action: "edit" %>
+  <% end %>
+  </br>
+  </br>
+  </br>
 
-<h1>Profile</h1>
-<% if @user == current_user %>
-<%= link_to "Edit", controller: "users", action: "edit" %>
-<% end %>
+  <h6 class="subheader">Name</h6>
+  <%=@user.name%>  
+  <%= link_to 'Message', new_user_message_path(@user.id)  %>
+  </br>
+  </br>
+  </br>
+  <h6 class="subheader">Email</h6>
+  <%=@user.email%></br>
+  </br>
+  </br>
+  <h6 class="subheader">Tell us about yourself!</h6>
+  <%=@user.description%></br>
+  </br>
+  </br>
+  <h6 class="subheader">Twitter Handle</h6>
+  <%= @user.twitter_link%></br>
+  </br>
+  </br>
+  <h6 class="subheader">Facebook</h6>
 
-<h6 class="subheader">Name</h6>
-<%=@user.name%>  </br>
-<%= link_to 'Message', new_user_message_path(@user.id)  %>
-</br>
-<h6 class="subheader">Email</h6>
-<%=@user.email%></br>
-</br>
-<h6 class="subheader">Tell us about yourself!</h6>
-<%=@user.description%></br>
-</br>
-<h6 class="subheader">Twitter Handle</h6>
-<%= @user.twitter_link%></br>
-</br>
-<h6 class="subheader">Facebook</h6>
-
-<%= link_to @user.facebook_link, @user.facebook_link %></br>
-</br>
-<h6 class="subheader">LinkedIn</h6>
-<%= link_to @user.linkedin_link, @user.linkedin_link%></br>
-
+  <%= link_to @user.facebook_link, @user.facebook_link %></br>
+  </br>
+  <h6 class="subheader">LinkedIn</h6>
+  <%= link_to @user.linkedin_link, @user.linkedin_link%></br>
+</div>
 
 

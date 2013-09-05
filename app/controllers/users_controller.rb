@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       @name = @user.name
       @email = @user.email
       
-      render action: :show
+      render :show
     else
       render file: 'public/404', status: 404, formats: [:html]
     end

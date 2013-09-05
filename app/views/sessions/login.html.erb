@@ -1,7 +1,9 @@
 
 
 <h1>Welcome to SurfBuddy</h1>
-  <h1 class="subheader">Log In</h1>  
+  <p class="intro">A place to help you shred more, cuz you're worth it</p>
+
+  <h1 id="login" class="subheader">Log In</h1>  
 
     <%= form_tag sessions_path do %>
    
@@ -14,7 +16,7 @@
       <%= submit_tag "Log In" %> </br>
       </br>
 
-      <h3>OR</h3>
+      <h3 class="or">OR</h3>
 
      <%= link_to image_tag(""), "/auth/google_oauth2", class: "google"%></br>
 

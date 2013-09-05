@@ -13,11 +13,26 @@
  *= require_tree .
  */
 
+.intro {
+  color: white;
+  font-size: 20px;
+}
+
+nav.top-bar {
+  margin: 0;
+ }
+
+#image {
+  background-image: url(fort_point_sunny.jpg);
+  background-size: cover;
+  padding: 50px 0px 25px 50px;
+}
+
 a.google img {
   background-image: url(./google_signin.png);
   width: 239px;
   height: 47px;
-  border: white 1px solid;
+  
 }
 h5.subheader {
   color:blue;
@@ -33,6 +48,67 @@ div.post {
   border: black 1px solid;
   margin: 20px;
   padding: 10px;
+}
+
+.right_side_graphs{
+  float: right;
+  margin-right: 50px;
+  margin-top: 25px;
+}
+.all_wave_graphs {
+  float: left;
+  width: 600px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+
+.message_feed {
+  background-color: white;
+  opacity: .8;
+}
+.messages {
+  border-bottom: black solid 1px;
+  padding: 10px;
+}
+.messages h3 {
+  padding: 0;
+  margin: 0;
+}
+p {
+  font-family: Arial, Helvetica;
+  font-size: 30px;
+}
+
+#a {
+  margin: 0;
+  padding: 0;
+}
+#b {
+  margin: 0;
+  padding: 0;
+}
+
+.small-6 h3 {
+  color: white;
+}
+#create a, .small-12 a{
+  color: white;
+}
+
+.small-6 label, #login {
+  color: white;
+}
+.profile {
+  background-color: white;
+  opacity: .8;
+  padding: 10px;
+  
+}
+h3.or {
+  color: black;
+}
+#conditions_signin.small-12.large-2.columns a {
+  color: black;
 }
 
 /*div.row {

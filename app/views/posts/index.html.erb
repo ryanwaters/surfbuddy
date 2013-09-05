@@ -1,16 +1,16 @@
     
-   <h3 class="subheader"> <%= link_to "Create New Post", controller: "posts", action: "new" %></h3>
+   <h3 id="create" class="subheader"> <%= link_to "Create New Post", controller: "posts", action: "new" %></h3>
 
     
       <div class="feed">
         
           <% @posts.reverse.each do |post| %>
           <div class="post">
-          <%= post.created_at.strftime('%b %e %Y %l:%M %P') %> </br>
-          <%= link_to post.user.try(:name), post.user %>
-          <h5> <%= post.title.capitalize %></h5>
+          <h4 class="subheader"><%= post.created_at.strftime('%b %e %Y %l:%M %P') %></h4> 
+          <h3 id="b"><small><%= link_to post.user.try(:name), post.user %> posts:</small></h3>
+          <h3 id="a"><small><%= post.title.capitalize %></small></h3>
 
-          <h5 class="subheader"><%= post.body %> </h5>
+          <p><%= post.body.capitalize %> </p>
           <%= link_to "Add Comment", controller: "comments", action: "new", id: post.id%> </br>
         
      

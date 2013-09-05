@@ -1,6 +1,15 @@
 <h3>Your Messages</h3>
 
-<% @messages.each do |message| %>
-<%= message.title %> 
-<%= message.body %>
-<%end%>
+
+<div class="message_feed">
+    <% @messages.reverse.each do |message| %>
+  <div class="messages">
+    <h4 class="subheader"><%= message.created_at.strftime('%b %e %Y %l:%M %P') %></h4>
+
+    <h3 class="title"><small>From: <%=link_to message.sender.name, message.sender%></small></h3>
+    <h3><small><%= message.title.capitalize %></small></h3> 
+    <p><%= message.body.capitalize %></p>
+    <%= link_to 'Reply', new_user_message_path(message.sender.id)  %>
+  </div>
+    <%end%>
+</div>

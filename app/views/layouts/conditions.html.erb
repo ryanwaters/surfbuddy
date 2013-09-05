@@ -5,18 +5,18 @@
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
-  	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+    <!-- Uncomment to make IE8 render like IE7 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Surf Buddy" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Surf Buddy" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
@@ -50,25 +50,26 @@
     </ul>
   </div>
 </nav>
-
-
-<div id="image" class="row">
+<div class="row">
   <div class="small-6 large-2 columns"></div>
-  <div class="small-6 large-8 columns"><%= yield %></div>
-  <div class="small-12 large-2 columns">   <% if current_user %>
+  <div class="small-6 large-8 columns"></div>
+  <div id="conditions_signin" class="small-12 large-2 columns">
+    <% if current_user %>
     Logged in as <%= current_user.email %>
     <%= link_to "Log Out", session_path("current"), method: 'delete' %>
     <% else %>
     <%= link_to "Sign Up", new_user_path %> or
     <%= link_to "Sign In", root_url %>
-    <% end %></div>
+    <% end %>
+  </div>  
 </div>
 
-    
+<%= yield %>
 
-    
-  <%= javascript_include_tag "application" %>
+<%= javascript_include_tag "application" %>
     
     
   </body>
 </html>
+
+

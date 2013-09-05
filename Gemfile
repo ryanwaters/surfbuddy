@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 gem 'protected_attributes'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -39,6 +39,17 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth-google-oauth2'
 gem 'zurb-foundation'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem "pg"
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
