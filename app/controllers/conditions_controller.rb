@@ -1,6 +1,7 @@
 class ConditionsController < ApplicationController
   require 'json'
   require 'open-uri'
+  include SessionsHelper
   
 
   def index
