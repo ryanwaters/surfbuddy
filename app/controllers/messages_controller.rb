@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
-  before_filter :user_authorization, except: [:new, :create]
+  include SessionsHelper
+  before_filter :signed_in_user, except: [:new, :create]
 
   def index
     @user = User.find(params[:user_id])

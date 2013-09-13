@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130830184120) do
+ActiveRecord::Schema.define(version: 20130913225340) do
 
   create_table "comments", force: true do |t|
     t.integer  "post_id"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20130830184120) do
     t.string   "twitter_link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_token"
+    t.string   "provider"
+    t.integer  "uid"
   end
 
 end

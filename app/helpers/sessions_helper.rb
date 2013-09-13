@@ -9,7 +9,7 @@ module SessionsHelper
     # current_user is avilable in controllers and views!
     # This is an is an assignment, which we must define - see below
     # note that next line is a call to setter 'def current_user=(user)' below
-    current_user = user
+    user = current_user
   end
 
   def signed_in?
@@ -25,14 +25,15 @@ module SessionsHelper
       # to be able to redirect after successful sign in.
       session[:return_to] = request.url
       # prompt sign in page
-      redirect_to signin_url, notice: "Please sign in."
+      redirect_to login_path, notice: "Please sign in."
     end
   end
 
   # signs out user by deleting @current_user and session cookie
   def sign_out
-    @current_user = nil
+    self.current_user = nil
     cookies.delete(:remember_token)
+    redirect_to login_path
   end
 
   # Getter and setter for @current_user
@@ -44,6 +45,15 @@ module SessionsHelper
   # If exists, get the user record that belongs to that session.
   def current_user
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
+  end
+
+  def user_finder 
+    if(params[:session])
+      @user = User.find_by_email(params[:session][:email])
+    else
+      auth = request.env["omniauth.auth"]
+      @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    end
   end
 
 end

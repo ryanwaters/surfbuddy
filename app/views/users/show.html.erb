@@ -1,11 +1,12 @@
 <div class="profile">
   <h1 id="b">Profile</h1>
   <% if @user == current_user %>
-  <%= link_to "Edit", controller: "users", action: "edit" %>
+  <%= link_to "Edit", controller: "users", action: "edit" %> 
   <% end %>
   </br>
   </br>
   </br>
+  <%# binding.pry %>
 
   <h6 class="subheader">Name</h6>
   <%=@user.name%>  
