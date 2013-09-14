@@ -28,12 +28,22 @@ nav.top-bar {
   padding: 50px 0px 25px 50px;
 }
 
-a.google img {
-  background-image: url(./google_signin.png);
-  width: 239px;
-  height: 47px;
-  
+.google {
+  background-image: url(google_signin.png);
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+  line-height: 10px;
 }
+
+form a {
+  color: white;
+  position: absolute;
+  left: 44px;
+  font-size: 30px;
+  bottom: 51px;
+}
+
 h5.subheader {
   color:blue;
 }
@@ -110,6 +120,8 @@ h3.or {
 #conditions_signin.small-12.large-2.columns a {
   color: black;
 }
+
+
 
 /*div.row {
   background: url('./fort_point_sunny.jpg');
