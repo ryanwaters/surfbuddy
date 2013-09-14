@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
 
   def self.create_with_omniauth(auth)
   create! do |user|
-    user.email = auth["extra"]["raw_info"]["email"]
+    user.email = auth["info"]["email"]
     user.name = auth["info"]["name"]
     user.password_digest = SecureRandom.urlsafe_base64
     user.password = auth["credentials"]["token"]
