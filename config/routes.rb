@@ -5,7 +5,7 @@ Surfbuddy::Application.routes.draw do
   get 'login', to: 'sessions#login', as: 'login'  
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  match '/auth/google_oauth2/callback' to: 'sessions#create'
+  get '/auth/google_oauth2/callback' to: 'sessions#create'
 
   root to: 'sessions#login'
   
