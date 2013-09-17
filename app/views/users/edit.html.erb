@@ -1,23 +1,25 @@
-<h1>Profile</h1>
+<div class="profile">
+  <h1>Profile</h1>
 
-<%= form_for @user do |f| %>
-<h6>Name</h6>
-<%=f.text_field :name %></br>
-</br>
-<h6>Email</h6>
-<%=f.text_field :email %></br>
-</br>
-<h6>Tell us about yourself!</h6>
-<%=f.text_area :description, :rows => '30' %></br>
-</br>
-<h6>Twitter Handle</h6>
-<%=f.text_field :twitter_link %></br>
-</br>
-<h6>Facebook</h6>
-<%=f.text_field :facebook_link %></br>
-</br>
-<h6>LinkedIn</h6>
-<%=f.text_field :linkedin_link %></br>
+  <%= form_for @user do |f| %>
+  <h6>Name</h6>
+  <%=f.text_field :name %></br>
+  </br>
+  <h6>Email</h6>
+  <%=f.text_field :email %></br>
+  </br>
+  <h6>Tell us about yourself!</h6>
+  <%=f.text_area :description, :rows => '30' %></br>
+  </br>
+  <h6>Twitter Handle</h6>
+  <%=f.text_field :twitter_link %></br>
+  </br>
+  <h6>Facebook</h6>
+  <%=f.text_field :facebook_link %></br>
+  </br>
+  <h6>LinkedIn</h6>
+  <%=f.text_field :linkedin_link %></br>
 
-<%= f.submit 'Save Changes' %>
-<% end %>
+  <%= f.submit 'Save Changes' %>
+  <% end %>
+</div>
