@@ -1,10 +1,16 @@
-Welcome to SurfBuddy (still working on name)
+*SurfBuddyApp.com*
 
 
 This is an application designed for surfers to find other surfers to go surfing with.
 
-Users will be able to login, make posts about where/when they want to go, comment on other users posts, and send 1-1 messages with other users.
+Users are able to login and create a profile, make posts, comment on posts, and message each other privately
 
-There will be custom weather and surf reports to reference, and user profiles to view. 
+There is a page of real time weather graphs using Morrisjs charts
 
-May also try to include some surf event's and sweet graphs.
+Rails app that uses Foundation as the front end framework. I hand coded the authentication, and then tried to implement the Omniauth for Google, and have encountered a bug that i'm currently working on, so the google button is not currently working. 
+
+Surprisingly it has a few active users, awesome. 
+
+Morris.js charts are very easy to use and show the info I wanted to, they are however, not responsive. 
+
+The surf conditions are courtesy of Jack Mullis' API at Spitcast.com, which is super rad. 
